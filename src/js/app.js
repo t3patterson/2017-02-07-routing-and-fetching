@@ -7,7 +7,7 @@ function controllerRouter (){
 	var currentRoute = window.location.hash.slice(1)
  	
 	if(currentRoute === 'technology'){
-		$.getJSON('http://api.nytimes.com/svc/topstories/v1/technology.json?api-key=12e8922b74134ddabb5c1f2c5e866001')
+		$.getJSON('https://api.nytimes.com/svc/topstories/v1/technology.json?api-key=12e8922b74134ddabb5c1f2c5e866001')
 			.then(function(serverRes){
 				var htmlTemplate = createArticlePageTemplate( serverRes.results, "Technology" )
 				appContainerEl.innerHTML = htmlTemplate
@@ -16,7 +16,7 @@ function controllerRouter (){
 	}
 
 	if(currentRoute === 'sports'){
-		$.getJSON('http://api.nytimes.com/svc/topstories/v1/sports.json?api-key=12e8922b74134ddabb5c1f2c5e866001')
+		$.getJSON('https://api.nytimes.com/svc/topstories/v1/sports.json?api-key=12e8922b74134ddabb5c1f2c5e866001')
 			.then(function(serverRes){
 				var htmlTemplate = createArticlePageTemplate( serverRes.results, "Sports" )
 				appContainerEl.innerHTML = htmlTemplate
@@ -24,7 +24,7 @@ function controllerRouter (){
 		return
 	}
 
-	$.getJSON('http://api.nytimes.com/svc/topstories/v1/world.json?api-key=12e8922b74134ddabb5c1f2c5e866001')
+	$.getJSON('https://api.nytimes.com/svc/topstories/v1/world.json?api-key=12e8922b74134ddabb5c1f2c5e866001')
 		.then(function(serverRes){
 			console.log(serverRes)
 			var htmlTemplate = createArticlePageTemplate( serverRes.results, "World News" )
